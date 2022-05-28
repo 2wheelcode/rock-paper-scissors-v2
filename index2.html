@@ -1,0 +1,105 @@
+<!-- This is the HTML that started, and needed the below comment features to complete -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <script>
+    var options = ["Rock", "Paper", "Scissors"];
+    var computer = "No Selection";
+    var player = "No Selection";
+
+    var playerScore = 0;
+    var computerScore = 0;
+
+    function computerSelection() {
+      const rpsValue = Math.floor(Math.random() * 3);
+      console.log(options[rpsValue]);
+      computer = options[rpsValue];
+      return options[rpsValue];
+    }
+    function playerSelection(string) {
+      player = string;
+      console.log(string);
+      let promptSelection = prompt("Please enter your selection");
+      console.log(promptSelection, "From Prompt");
+      return string;
+    }
+
+    function comparison() {
+      /* console.log("Player", playerScore, "Computer", computerScore); */
+      if (playerScore > 3) {
+        console.log("Player has Won!!");
+      } else if (computerScore > 3) {
+        console.log("Computer has Won :(");
+      } else {
+        console.log("Next Round");
+      }
+
+      if (computer === player) {
+        console.log("Tie Game");
+        return "Tie Game";
+      } else if (
+        (player === "Rock" && computer === "Scissors") ||
+        (player === "Scissors" && computer === "Paper") ||
+        (player === "Paper" && computer === "Rock")
+      ) {
+        playerScore = playerScore + 1;
+        console.log("Player Wins!");
+        console.log("Player", playerScore, "Computer", computerScore);
+        return "Player Wins!";
+      } else {
+        computerScore = computerScore + 1;
+        console.log("Computer Wins!");
+        console.log("Player", playerScore, "Computer", computerScore);
+        return "Computer Wins!";
+      }
+    }
+
+    function game() {}
+  </script>
+  <body>
+    <h1>Rock Paper Scissors Game</h1>
+    <h3>Computer Selection</h3>
+    <button onClick="computerSelection()">Computer Selection</button>
+    <h3>Player Selection</h3>
+    <button onclick="playerSelection('Rock')">Rock</button>
+    <button onclick="playerSelection('Paper')">Paper</button>
+    <button onclick="playerSelection('Scissors')">Scissors</button>
+    <button onclick="comparison()">Play!</button>
+  </body>
+</html>
+
+<!-- Docs: 
+
+Some function that creates userChoice
+User: 
+  Either input directly with text, 
+  dropdown,
+  3 buttons signaling selection
+Some function that generates a random computer choice
+
+Some function to compare the choices to see who won
+
+Some function to count/record the game state
+
+While Loop Implementation Specs & Design: 
+
+-> While Loop Condition: If either player has a score greater than 3.
+-> Inside the while loop you're going to have the Computer selection run every loop. 
+->You are also going to want to have the player selection prompt you to input every loop. 
+-> Run the comparison against those values every loop. 
+-> Update the scores
+-> Check and see if there is a winner, if there is not a winner, continue the loop.
+
+
+
+
+
+
+
+-->

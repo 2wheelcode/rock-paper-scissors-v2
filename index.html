@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <!-- <script>
+    var options = ["Rock", "Paper", "Scissors"];
+    var computer = "No Selection";
+    var player = "No Selection";
+
+    var playerScore = 0;
+    var computerScore = 0;
+
+    function computerSelection() {
+      const rpsValue = Math.floor(Math.random() * 3);
+      /* console.log(options[rpsValue]); */
+      // working, console.log() not needed, schedule removal
+      computer = options[rpsValue];
+      return options[rpsValue];
+    }
+    function playerSelection(string) {
+      player = string;
+      /* console.log(string);
+      let promptSelection = prompt("Please enter your selection");
+      console.log(promptSelection, "From Prompt"); */
+      // working, console.log() & prompt not needed, schedule removal
+      return string;
+    }
+
+    function gameOver() {
+      var playerScore = 0;
+      var computerScore = 0;
+      prompt("Play Again?");
+    }
+
+    function comparison() {
+      /* console.log("Player", playerScore, "Computer", computerScore); */
+      // working, console.log() not needed, schedule removal
+      computerSelection();
+      /* if (playerScore === 3) {
+        console.log("Player has Won!!");
+        //break;
+      } else if (computerScore === 3) {
+        console.log("Computer has Won :(");
+        //break;
+      } else {
+        console.log("Next Round");
+        /* function computerSelection();
+      } */
+      // working, ^this not needed, schedule removal
+
+      if (computer === player) {
+        /* console.log("Tie Game"); */
+        // working, console.log() not needed, schedule removal
+        document.getElementById(
+          "choice"
+        ).innerText = `${player} on ${computer}`;
+        document.getElementById("round-winner").innerText = "It's a Tie";
+        document.getElementById(
+          "score"
+        ).innerText = `Player: ${playerScore} Computer: ${computerScore}`;
+        return;
+      } else if (
+        (player === "Rock" && computer === "Scissors") ||
+        (player === "Scissors" && computer === "Paper") ||
+        (player === "Paper" && computer === "Rock")
+      ) {
+        playerScore = playerScore + 1;
+        /* console.log("Player Wins!");
+        console.log("Player", playerScore, "Computer", computerScore); */
+        // working, console.log() not needed, schedule removal
+        document.getElementById(
+          "choice"
+        ).innerText = `${player} beats ${computer}`;
+        document.getElementById("round-winner").innerText =
+          "Player Wins the Round!!";
+        document.getElementById(
+          "score"
+        ).innerText = `Player: ${playerScore} - Computer: ${computerScore}`;
+        if (playerScore === 3) {
+          document.getElementById("game-winner").innerText =
+            "Man over Machine! Player wins the Game!!!";
+          gameOver();
+        }
+        return;
+      } else {
+        computerScore = computerScore + 1;
+        /* console.log("Computer Wins!");
+        console.log("Player", playerScore, "Computer", computerScore); */
+        // working, console.log() not needed, schedule removal
+        document.getElementById(
+          "choice"
+        ).innerText = `${computer} beats ${player}`;
+        document.getElementById("round-winner").innerText =
+          "Computer Wins the Round :(";
+        document.getElementById(
+          "score"
+        ).innerText = `Player: ${playerScore} - Computer: ${computerScore}`;
+        if (computerScore === 3) {
+          document.getElementById("game-winner").innerText =
+            "When you match wits with a half wit, machines win the Game!";
+          gameOver();
+        }
+        return;
+      }
+    }
+
+    function game() {}
+  </script> -->
+  <body>
+    <h1>Rock Paper Scissors Game</h1>
+    <h2 id="game-winner"></h2>
+    <h4 id="play-game-btn"></h4>
+    <!-- <h3>Choose Your Weapon!</h3> -->
+    <div id="player-btns">
+      <!-- <button onclick="playerSelection('Rock')">Rock</button>
+      <button onclick="playerSelection('Paper')">Paper</button>
+      <button onclick="playerSelection('Scissors')">Scissors</button> -->
+    </div>
+
+    <!-- <h3>Computer Selection is Random</h3>
+    <button onClick="computerSelection()">Computer Selection</button>
+    <button onclick="comparison()">Play Round!</button>
+    ^ this ^ can be removed -->
+    <div>
+      <h4 id="choice"></h4>
+      <h3 id="round-winner"></h3>
+      <h4 id="score"></h4>
+      <!-- <h2 id="game-winner"></h2> -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Docs: 
+
+Some function that creates userChoice
+User: 
+  Either input directly with text, 
+  dropdown,
+  3 buttons signaling selection
+Some function that generates a random computer choice
+
+Some function to compare the choices to see who won
+
+Some function to count/record the game state
+
+While Loop Implementation Specs & Design: 
+
+-> While Loop Condition: If either player has a score greater than 3.
+-> Inside the while loop you're going to have the Computer selection run every loop. 
+-> You are also going to want to have the player selection prompt you to input every loop. 
+-> Run the comparison against those values every loop. 
+-> Update the scores
+-> Check and see if there is a winner, if there is not a winner, continue the loop.
+
+
+
+
+
+
+
+-->
